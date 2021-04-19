@@ -65,7 +65,7 @@ We fine-tuned the model for 30 epochs. The [fine tuned model](https://drive.goog
 
 
 ## DPR retriever inference on StrategyQA dataset
-We used DPR for inference on StrategyQA datset. During inference, the model retrieve the most relevant paragraphs to the question from the corpus. 
+We used DPR for inference on StrategyQA datset. During inference, the model retrieves the most relevant paragraphs to the question from the corpus. 
 
 ### Convert strategyQA corpus to DPR format
 We converted the corpus used by strategyQA to the DPR format so that it could be loaded and indexed by the model during inference. 
@@ -81,6 +81,12 @@ Generating representation vectors for the static documents dataset is a highly p
 ```
  python generate_dense_embeddings.py --model_file {path to biencoder checkpoint} --out_file {result file location} --ctx_file {path to corpus file} --shard_id {shard_num, 0-based} --num_shards {total num of shards}
  ```
+
+### Run Inference
+We evaluated the inference of both the DPR bert-base model, and the model that was fine tuned on StrategyQA dataset.
+```
+python dense_retriever.py --model_file {path to model checkpoint} --ctx_file {path to corpus tsv file} --qa_file {path to questions file} --encoded_ctx_file {encoded document files glob expression} --out_file {path to retriever resutls} --n-docs 200
+```
 
 The tool writes retrieved results for subsequent reader model training into specified out_file.
 It is a json with the following format:
