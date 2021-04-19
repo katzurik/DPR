@@ -27,3 +27,11 @@ squad1_train:
 squad1_dev:
   _target_: dpr.data.biencoder_data.JsonQADataset
   file: data.retriever.squad1-dev
+
+strategy_train:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: /DPR/conf/datasets/StrategyQA dataset/strategyQA_train.json
+
+strategy_dev:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: /DPR/conf/datasets/StrategyQA dataset/strategyQA_dev.json
