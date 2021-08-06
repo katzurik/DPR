@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     paragraph_file = args.paragraphs_file
-    out_path = args.out_path
+    out_path = args.out_file
 
     if os.path.exists(paragraph_file):
         with open(
