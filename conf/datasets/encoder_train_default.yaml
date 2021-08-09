@@ -38,8 +38,8 @@ strategy_dev:
 
 strategy_gold_train:
   _target_: dpr.data.biencoder_data.JsonQADataset
-  file: /DPR/conf/datasets/StrategyQA dataset/strategyQA_train/modified_data/gold/strategyQA_train.json
+  file: /DPR/conf/datasets/StrategyQA dataset/modified_data/gold/strategyQA_train.json
 
 strategy_gold_dev:
   _target_: dpr.data.biencoder_data.JsonQADataset
-  file: /DPR/conf/datasets/StrategyQA dataset/strategyQA_train/modified_data/gold/strategyQA_dev.json
+  file: /DPR/conf/datasets/StrategyQA dataset/modified_data/gold/strategyQA_dev.json
