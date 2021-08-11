@@ -5,7 +5,12 @@ dpr_wiki:
   file: data.wikipedia_split.psgs_w100
   id_prefix: 'wiki:'
 
-dpr_strategyqa:
+dpr_strategyqa_tsv:
   _target_: dpr.data.retriever_data.CsvCtxSrc
   file: /home/joberant/home/urikatz1/dpr/datasets/strategyqa/embedded_corpus/corpus-enwiki-20200511.tsv
+  id_prefix: 'strategyqa:'
+
+dpr_strategyqa_csv:
+  _target_: dpr.data.retriever_data.CsvCtxSrc
+  file: /home/joberant/home/urikatz1/dpr/datasets/strategyqa/embedded_corpus/corpus-enwiki-20200511.csv
   id_prefix: 'strategyqa:'
