@@ -3,6 +3,9 @@ import csv
 import json
 import logging
 import pickle
+import sys
+
+csv.field_size_limit(sys.maxsize)
 from typing import Dict
 
 import hydra
