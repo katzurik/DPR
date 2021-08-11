@@ -36,8 +36,8 @@ if __name__ == "__main__":
             json_list = list(f)
 
         with open(out_path, 'w', encoding="utf8") as tsvfile:
-            #writer = csv.writer(tsvfile, delimiter="\t")
-            writer = csv.writer(tsvfile, delimiter=" ")
+            writer = csv.writer(tsvfile, delimiter="\t")
+            #writer = csv.writer(tsvfile, delimiter=" ")
             # file format: doc_id, doc_text, title
             writer.writerow(("id", "text", "title"))
 

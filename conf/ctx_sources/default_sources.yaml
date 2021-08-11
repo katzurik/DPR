@@ -7,5 +7,5 @@ dpr_wiki:
 
 dpr_strategyqa:
   _target_: dpr.data.retriever_data.CsvCtxSrc
-  file: /home/joberant/home/urikatz1/dpr/datasets/strategyqa/embedded_corpus/corpus-enwiki-20200511.csv
+  file: /home/joberant/home/urikatz1/dpr/datasets/strategyqa/embedded_corpus/corpus-enwiki-20200511.tsv
   id_prefix: 'strategyqa:'
