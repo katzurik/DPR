@@ -253,6 +253,7 @@ class CsvCtxSrc(RetrieverData):
                     sample_id = self.id_prefix + str(row[self.id_col])
                 else:
                     sample_id = row[self.id_col]
+                print(self.text_col)
                 passage = row[self.text_col]
                 if self.normalize:
                     passage = normalize_passage(passage)
