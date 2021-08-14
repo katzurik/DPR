@@ -33,9 +33,9 @@ strategy_dev:
   file: /DPR/conf/datasets/StrategyQA dataset/strategyQA_dev.json
 
 strategy_gold_train:
-  _target_: dpr.data.biencoder_data.JsonlQASrc
+  _target_: dpr.data.biencoder_data.JsonQADataset
   file: /home/joberant/home/urikatz1/dpr/DPR/conf/datasets/StrategyQA dataset/modified_data/gold/strategyQA_train.json
 
 strategy_gold_dev:
-  _target_: dpr.data.biencoder_data.JsonlQASrc
+  _target_: dpr.data.biencoder_data.JsonQADataset
   file: /home/joberant/home/urikatz1/dpr/DPR/conf/datasets/StrategyQA dataset/modified_data/gold/strategyQA_dev.json
