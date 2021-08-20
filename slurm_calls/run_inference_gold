@@ -1,3 +1,4 @@
+#!/bin/bash
 export TRANSFORMERS_CACHE=/home/joberant/home/urikatz1/hf_cache
 python dense_retriever.py \
  model_file="/home/joberant/home/urikatz1/dpr/DPR/outputs/2021-08-09/23-15-58/output/dpr_biencoder.28"\
