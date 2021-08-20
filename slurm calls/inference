@@ -1,0 +1,1 @@
+sbatch --job-name=awesome --output=/home/joberant/home/urikatz1/dpr/experiments/gold/output/dense_retriever.out --error=/home/joberant/home/urikatz1/dpr/experiments/gold/output/dense_retriever.err --partition=killable --time=1440 --signal=USR1@120 --nodes=1 --ntasks=1 --mem=300000 --cpus-per-task=4 --gpus=1
