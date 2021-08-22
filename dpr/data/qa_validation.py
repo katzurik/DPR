@@ -104,6 +104,7 @@ def check_answer(questions_answers_docs, tokenizer, match_type) -> List[bool]:
     return hits
 
 
+
 def has_answer(answers, text, tokenizer, match_type) -> bool:
     """Check if a document contains an answer string.
     If `match_type` is string, token matching is done between the text and answer.
