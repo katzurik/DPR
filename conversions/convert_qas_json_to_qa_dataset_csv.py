@@ -39,6 +39,6 @@ if __name__ == "__main__":
 
             for item in json_list:
                 question = item['question']
-                answer = [str(item["answers"])]
+                answer = [str(item["answers"]).lower()]
                 writer.writerow((question, answer))
 

@@ -116,6 +116,7 @@ def has_answer(answers, text, tokenizer, match_type) -> bool:
         text = tokenizer.tokenize(text).words(uncased=True)
 
         for single_answer in answers:
+            single_answer = str(single_answer)
             single_answer = _normalize(single_answer)
             single_answer = tokenizer.tokenize(single_answer)
             single_answer = single_answer.words(uncased=True)
