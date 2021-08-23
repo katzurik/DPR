@@ -5,4 +5,4 @@ export TRANSFORMERS_CACHE=/home/joberant/home/urikatz1/hf_cache
  qa_dataset=strategy_gold_dev \
  ctx_datatsets=[dpr_strategyqa_tsv] \
  encoded_ctx_files=["/home/joberant/home/urikatz1/dpr/datasets/strategyqa/embedded_corpus/dpr_ctx_*"] \
- out_file="/home/joberant/home/urikatz1/dpr/experiments/gold/output"
+ out_file="/home/joberant/home/urikatz1/dpr/experiments/gold/output/result.json"
