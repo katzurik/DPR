@@ -29,6 +29,7 @@ def creating_resulted_dict(retriever_results, quest2id):
             has_seen = False
             for res in retriever_res:
                 question = res['question']
+                #question =  question.rsplit('?', 1)[0]+"?"
                 qid = quest2id[question]
                 if question == "Can Tulsi Gabbard eat the fries at McDonald's?" and has_seen:
                     qid = "7a4802347e6dd236cb50"
@@ -47,7 +48,7 @@ def save_json(out_path, json_dict):
 
 
 if __name__ == "__main__":
-    mapping_path = "/Users/roicohen/Desktop/NLP course/DPR-master/strategyqa_test.json"
+    mapping_path = "/Users/uri/Documents/Uri/school/Thesis/Implicit/thesis/DPR/conf/datasets/StrategyQA dataset/modified_data/gold/strategyQA_dev__USE_EVAL_ONLY.json"
 
     parser = argparse.ArgumentParser()
 
