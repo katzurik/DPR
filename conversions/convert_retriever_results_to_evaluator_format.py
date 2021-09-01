@@ -4,7 +4,7 @@ import sys
 import json
 import csv
 import argparse
-
+from pathlib import Path
 
 def creating_question2id_map(mapping_file_path):
     if os.path.exists(mapping_file_path):
@@ -19,7 +19,7 @@ def creating_question2id_map(mapping_file_path):
     return quid_dic
 
 
-def creating_resulted_dict(retriever_results, quest2id):
+def creating_resulted_dict(retriever_results, quest2id,top_k):
     if os.path.exists(retriever_results):
         with open(
                 retriever_results, "r", encoding="utf8"
@@ -36,7 +36,7 @@ def creating_resulted_dict(retriever_results, quest2id):
                 if question == "Can Tulsi Gabbard eat the fries at McDonald's?" and not has_seen:
                     has_seen = True
                 paragraphs = []
-                for i in range(10):
+                for i in range(top_k):
                     paragraphs.append(res['ctxs'][i]['id'])
                 results_dict[qid] = { 'paragraphs': paragraphs }
         return results_dict
@@ -62,10 +62,18 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "--out_file",
-        required=True,
+        required=False,
         type=str,
         default=None,
         help="Evaluator format output path",
+    )
+
+    parser.add_argument(
+        "--top_k",
+        required=False,
+        type=int,
+        default=100,
+        help="top k documents",
     )
 
     args = parser.parse_args()
@@ -74,11 +82,18 @@ if __name__ == "__main__":
 
     retriever_results = args.retriever_output_file
     out_path = args.out_file
+    top_k = args.top_k
 
-    json_dict = creating_resulted_dict(retriever_results, quest2id)
+    json_dict = creating_resulted_dict(retriever_results, quest2id,top_k)
 
-    with open(out_path, 'w', encoding="utf8") as f3:
-        json.dump(json_dict, f3, indent=4)
+    if out_path:
+        with open(out_path, 'w', encoding="utf8") as f3:
+            json.dump(json_dict, f3, indent=4)
+    else:
+        output_folder = Path(retriever_results).parent
+        out_path = output_folder.joinpath('retriever_results_for_evaluation.json')
+        with open(out_path, 'w', encoding="utf8") as f3:
+            json.dump(json_dict, f3, indent=4)
 
 
 

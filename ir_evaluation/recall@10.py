@@ -64,7 +64,7 @@ def main():
     parse.add_argument("--output-file", type=str)
     parse.add_argument("--retrieval-limit", type=int, default=10)
     args = parse.parse_args()
-    return calculate_score(args)
+    calculate_score(args)
 
 
 if __name__ == "__main__":
