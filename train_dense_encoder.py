@@ -796,6 +796,7 @@ def main(cfg: DictConfig):
         )
 
     if cfg.output_dir is not None:
+        logger.info("OUTPUT DIR CREATION",cfg.output_dir)
         os.makedirs(cfg.output_dir, exist_ok=True)
 
     cfg = setup_cfg_gpu(cfg)

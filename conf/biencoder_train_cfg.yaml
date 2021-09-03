@@ -7,7 +7,7 @@ defaults:
 
 train_datasets:
 dev_datasets:
-output_dir: '/home/joberant/home/urikatz1/dpr/experiments/training/gold/training_output'
+output_dir: '/home/joberant/home/urikatz1/dpr/experiments/training/gold/training_output/'
 train_sampling_rates:
 loss_scale_factors:
 
