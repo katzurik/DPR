@@ -49,6 +49,7 @@ from dpr.utils.model_utils import (
     get_model_obj,
     load_states_from_checkpoint,
 )
+from hydra.utils import get_original_cwd, to_absolute_path
 
 logger = logging.getLogger()
 setup_logger(logger)
@@ -788,6 +789,10 @@ def _do_biencoder_fwd_pass(
 
 @hydra.main(config_path="conf", config_name="biencoder_train_cfg")
 def main(cfg: DictConfig):
+
+    print(f"Current working directory : {os.getcwd()}")
+    print(f"Orig working directory    : {get_original_cwd()}")
+
     if cfg.train.gradient_accumulation_steps < 1:
         raise ValueError(
             "Invalid gradient_accumulation_steps parameter: {}, should be >= 1".format(
