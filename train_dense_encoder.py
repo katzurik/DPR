@@ -790,8 +790,8 @@ def _do_biencoder_fwd_pass(
 @hydra.main(config_path="conf", config_name="biencoder_train_cfg")
 def main(cfg: DictConfig):
 
-    print(f"Current working directory : {os.getcwd()}")
-    print(f"Orig working directory    : {get_original_cwd()}")
+    logger.info(f'Current working directory : %s',os.getcwd())
+    logger.info(f'Orig working directory    : %s',get_original_cwd())
 
     if cfg.train.gradient_accumulation_steps < 1:
         raise ValueError(
@@ -801,7 +801,7 @@ def main(cfg: DictConfig):
         )
 
     if cfg.output_dir is not None:
-        logger.info("OUTPUT DIR CREATION",cfg.output_dir)
+        logger.info('OUTPUT DIR CREATION %s' ,cfg.output_dir)
         os.makedirs(cfg.output_dir, exist_ok=True)
 
     cfg = setup_cfg_gpu(cfg)
