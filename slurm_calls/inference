@@ -1,3 +1,6 @@
 sbatch --job-name=dpr_inference_gold --output=/home/joberant/home/urikatz1/dpr/experiments/gold/output/dense_retriever.out --error=/home/joberant/home/urikatz1/dpr/experiments/gold/output/dense_retriever.err --partition=killable --time=1440 --signal=USR1@120 --nodes=1 --ntasks=1 --mem=300000 --cpus-per-task=4 --gpus=1 /home/joberant/home/urikatz1/dpr/DPR/slurm_calls/run_inference_gold.sh
 
 sbatch --job-name=dpr_inference_gold --output=/home/joberant/home/urikatz1/dpr/experiments/gold/gold_extra_content_dpr_biencoder.15/generate_dense_emb.out --error=/home/joberant/home/urikatz1/dpr/experiments/gold/gold_extra_content_dpr_biencoder.15/generate_dense_emb.err --partition=killable --time=1440 --signal=USR1@120 --nodes=1 --ntasks=1  --gpus=5 ./generate_dense_embedding_gold_extracontent_dpr15.sh
+
+
+sbatch --job-name=dense_dpr_128 --output=/home/joberant/home/urikatz1/dpr/experiments/training/gold_baseline_dpr_128_4g/dense_embeddings/dense_emb.out --error=/home/joberant/home/urikatz1/dpr/experiments/training/gold_baseline_dpr_128_4g/dense_embeddings/dense_emb.err --partition=killable --time=1440 --signal=USR1@120 --nodes=1 --ntasks=1  --gpus=5 ./generate_dense_embedding_gold_dpr28_bsz128.sh
