@@ -32,10 +32,15 @@ strategy_dev:
   _target_: dpr.data.biencoder_data.JsonQADataset
   file: /DPR/conf/datasets/StrategyQA dataset/strategyQA_dev.json
 
-strategy_gold_train:
+strategy_gold_dev:
+  _target_: dpr.data.retriever_data.CsvQASrc
+  file: /home/joberant/home/urikatz1/dpr/DPR/conf/datasets/StrategyQA dataset/gold/qas/strategyQA_qas_dev.tsv
+
+
+strategy_extra_content_gold_train:
   _target_: dpr.data.retriever_data.CsvQASrc
   file: /home/joberant/home/urikatz1/dpr/DPR/conf/datasets/StrategyQA dataset/modified_data/gold/qas/strategyQA_qas_train.tsv
 
-strategy_gold_dev:
+strategy_extra_content_gold_dev:
   _target_: dpr.data.retriever_data.CsvQASrc
   file: /home/joberant/home/urikatz1/dpr/DPR/conf/datasets/StrategyQA dataset/modified_data/gold/qas/strategyQA_qas_dev.tsv
