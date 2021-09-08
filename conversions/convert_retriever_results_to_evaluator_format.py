@@ -48,7 +48,7 @@ def save_json(out_path, json_dict):
 
 
 if __name__ == "__main__":
-    mapping_path = "/Users/uri/Documents/Uri/school/Thesis/Implicit/thesis/Experiments/Extract_strategy_from_SQA_decomp/Strategy_extraction/seq2seq_strategy_extractor/data/strategyqa_data_with_labels_reannotated/dev.json"
+    mapping_path = "/Users/uri/Documents/Uri/school/Thesis/Implicit/thesis/DPR/conf/datasets/StrategyQA dataset/modified_data/gold/strategyQA_dev__USE_EVAL_ONLY.json"
 
     parser = argparse.ArgumentParser()
 

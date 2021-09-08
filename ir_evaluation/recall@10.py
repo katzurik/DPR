@@ -34,10 +34,10 @@ def calculate_score(args):
         score_per_annotator = []
         for evidence in evidence_per_annotator:
             score = recall(evidence, retrieved_paragraphs) if len(evidence) > 0 else 0
-            print('----'*30)
-            print(score)
-            print(evidence)
-            print(retrieved_paragraphs)
+            # print('----'*30)
+            # print(score)
+            # print(evidence)
+            # print(retrieved_paragraphs)
             score_per_annotator.append(score)
 
         annotator_maximum = max(score_per_annotator)
@@ -66,7 +66,7 @@ def main():
     parse.add_argument("--data", type=str, required=True)
     parse.add_argument("-r", "--retrieved-paragraphs", type=str, required=True)
     parse.add_argument("--output-file", type=str)
-    parse.add_argument("--retrieval-limit", type=int, default=10)
+    parse.add_argument("--retrieval-limit", type=int, default=50)
     args = parse.parse_args()
     calculate_score(args)
 
