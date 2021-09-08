@@ -81,3 +81,4 @@ dpr_format_data_mapping = [{k: v for k, v in d.items() if k != 'qid'} for d in d
 output_file = 'strategyQA_'+datatype+'_for_mapping.json'
 with open(output_file,"w") as fd:
         json.dump(dpr_format_data_mapping, fd)
+
