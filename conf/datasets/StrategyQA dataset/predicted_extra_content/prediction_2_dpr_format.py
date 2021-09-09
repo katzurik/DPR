@@ -66,19 +66,23 @@ for i,sample_in_dpr_data in enumerate(dpr_format_data):
                 extra_content = ' ; '.join(data[data['qid']==sample_in_labeld_data['qid']]['new tokens'].item())
                 sample_in_dpr_data['question'] = '{} {}'.format(question,extra_content)
                 sample_in_dpr_data['qid'] = sample_in_labeld_data['qid']
-            question_changed = True
+                question_changed = True
             break
 
     if not question_changed:
+        sample_in_dpr_data['qid'] = sample_in_labeld_data['qid']
         print('i')
 
-
-output_file = 'strategyQA_'+datatype+'.json'
+output_file = 'strategyQA_'+datatype+'_for_mapping.json'
 with open(output_file,"w") as fd:
         json.dump(dpr_format_data, fd)
 
-dpr_format_data_mapping = [{k: v for k, v in d.items() if k != 'qid'} for d in dpr_format_data]
-output_file = 'strategyQA_'+datatype+'_for_mapping.json'
+
+dpr_format_data_no_qid = [{k: v for k, v in d.items() if k != 'qid'} for d in dpr_format_data]
+
+output_file = 'strategyQA_'+datatype+'.json'
 with open(output_file,"w") as fd:
-        json.dump(dpr_format_data_mapping, fd)
+        json.dump(dpr_format_data_no_qid, fd)
+
+
 
