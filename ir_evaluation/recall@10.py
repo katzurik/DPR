@@ -66,7 +66,7 @@ def main():
     parse.add_argument("--data", type=str, required=True)
     parse.add_argument("-r", "--retrieved-paragraphs", type=str, required=True)
     parse.add_argument("--output-file", type=str)
-    parse.add_argument("--retrieval-limit", type=int, default=50)
+    parse.add_argument("--retrieval-limit", type=int, default=10)
     args = parse.parse_args()
     calculate_score(args)
 
