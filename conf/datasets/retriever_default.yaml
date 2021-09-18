@@ -49,3 +49,7 @@ strategy_extra_content_predicted_dev:
   _target_: dpr.data.retriever_data.CsvQASrc
   file: /home/joberant/home/urikatz1/dpr/DPR/conf/datasets/StrategyQA dataset/predicted_extra_content/strategyQA_qas_dev.tsv
 
+
+strategy_description_dev:
+  _target_: dpr.data.retriever_data.CsvQASrc
+  file: /home/joberant/home/urikatz1/dpr/DPR/conf/datasets/StrategyQA dataset/gold_with_description/strategyQA_qas_dev.tsv
