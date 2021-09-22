@@ -35,7 +35,7 @@ def combine_clean(tokens,question):
     tokens = remove_duplicate_by_lemma(tokens)
     tokens = remove_duplicate_token_in_question(tokens,question)
     return tokens
-path = '/Users/uri/Documents/Uri/school/Thesis/Implicit/thesis/Experiments/Extract_strategy_from_SQA_decomp/Strategy_extraction/results/single_label_31_07/extra_content_description_single_label_top20_t5_large/eval_output_extra_content_single.json'
+path = '/Users/uri/Documents/Uri/school/Thesis/Implicit/thesis/Experiments/Extract_strategy_from_SQA_decomp/Strategy_extraction/results/single_label_31_07/extra_content_single_label_top20_t5_large/eval_output_extra_content_single.json'
 data = pd.DataFrame(load_data(path))[['qid','question','top_tokens_by_lm']].drop_duplicates(subset='qid')
 
 REMOVE_TOKENS_INCLUDED_IN_QUESTION = True
