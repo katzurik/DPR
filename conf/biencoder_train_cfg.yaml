@@ -7,7 +7,7 @@ defaults:
 
 train_datasets:
 dev_datasets:
-output_dir: '/home/joberant/home/urikatz1/dpr/experiments/training/gold/training_output/'
+output_dir:
 train_sampling_rates:
 loss_scale_factors:
 
@@ -16,7 +16,7 @@ do_lower_case: True
 
 fix_ctx_encoder: False
 val_av_rank_start_epoch: 20
-seed: 12345
+seed: 29012
 checkpoint_file_name: dpr_biencoder
 
 # A trained bi-encoder checkpoint file to initialize the model
